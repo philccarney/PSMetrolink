@@ -32,7 +32,7 @@
     # Private data to pass to the module specified in RootModule/ModuleToProcess. This may also contain a PSData hashtable with additional module metadata used by PowerShell.
     PrivateData       = @{
         PSData = @{
-            Tags       = @("metrolink", "met", "tram", "public transport", "rest")
+            Tags       = @("metrolink", "met", "tram", "public-transport", "rest", "rest-api")
             ProjectUri = "https://github.com/philccarney/psmetrolink"
             # LicenseUri = ""
             # IconUri = ""

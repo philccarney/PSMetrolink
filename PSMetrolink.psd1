@@ -8,7 +8,7 @@
     Author            = "Phil Carney"
     CompanyName       = "N/A"
     Copyright         = "(c) Phil Carney. All rights reserved."
-    Description       = "Find out how late your Met will be with Powershell"
+    Description       = "Find out how late your Met will be with Powershell."
     # CompatiblePSEditions = @()
     # PowerShellVersion = ""
     # PowerShellHostName = ""
@@ -25,7 +25,7 @@
     FunctionsToExport = @("Get-Metrolink")
     CmdletsToExport   = @()
     VariablesToExport = @()
-    AliasesToExport   = @("Get-Tram")
+    AliasesToExport   = @("Get-Met", "Get-Tram")
     # DscResourcesToExport = @()
     # ModuleList = @()
     # FileList = @()

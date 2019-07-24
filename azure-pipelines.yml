@@ -1,0 +1,16 @@
+trigger:
+  batch: true
+  branches:
+    include:
+      - master
+
+pool:
+  vmImage: 'windows-2019'
+
+steps:
+- script: pwsh -Command { Install-Module -Name "PowerShellGet" -Force }
+  displayName: 'Update PowershellGet'
+- script: pwsh -File publish.ps1
+  displayName: 'Publish Module'
+  env:
+    nugetapikey: $(nugetapikey)

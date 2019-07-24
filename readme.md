@@ -7,8 +7,8 @@ I was playing around with the TFGM/Metrolink API in the console, and after a whi
 Sign-up for a [TFGM api key](https://developer.tfgm.com/), then follow the example below:
 
 ```Powershell
-Install the module
-Install-Module -Name "PSMetrolink"
+# Install the module
+Install-Module -Name "PSMetrolink" -Repository "PSGallery"
 
 # Save your subscription key for ease of use - don't save it to your history
 $OriginalSaveStyle = (Get-PSReadLineOption).HistorySaveStyle
@@ -28,4 +28,4 @@ Get-Met -Station "Radcliffe" -Key $Key
 
 ## Notes
 
-The structure and build/publishing process borrows heavily from Kevin Marquette's _Micro Modules_ write-up on [PowershellExplained.com](https://powershellexplained.com/2019-04-11-Powershell-Building-Micro-Modules/).
+The structure and build/publishing process borrows* heavily from Kevin Marquette's _Micro Modules_ write-up on [PowershellExplained.com](https://powershellexplained.com/2019-04-11-Powershell-Building-Micro-Modules/).

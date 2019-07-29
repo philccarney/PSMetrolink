@@ -62,6 +62,16 @@ function Get-Metrolink
         [string] $Key,
 
         [Parameter(Mandatory = $False, Position = 1, HelpMessage = "A specific Metrolink station")]
+        [ValidateSet(
+            "Abraham Moss", "Altrincham", "Anchorage", "Ashton Moss", "Ashton West", "Ashton-Under-Lyne", "Audenshaw", "Baguley", "Barlow Moor Road", "Benchill", "Besses O’ Th’ Barn", "Bowker Vale", "Broadway",
+            "Brooklands", "Burton Road", "Bury", "Cemetery Road", "Central Park", "Chorlton", "Clayton Hall", "Cornbrook", "Crossacres", "Crumpsall", "Dane Road", "Deansgate - Castlefield", "Derker", "Didsbury Village",
+            "Droylsden", "East Didsbury", "Eccles", "Edge Lane", "Etihad Campus", "Exchange Quay", "Exchange Square", "Failsworth", "Firswood", "Freehold", "Harbour City", "Heaton Park", "Hollinwood", "Holt Town",
+            "Kingsway Business Park", "Ladywell", "Langworthy", "Manchester Airport", "Market Street", "Martinscroft", "MediaCityUK", "Milnrow", "Monsall", "Moor Road", "Navigation Road", "New Islington", "Newbold",
+            "Newhey", "Newton Heath and Moston", "Northern Moor", "Old Trafford", "Oldham Central", "Oldham King Street", "Oldham Mumps", "Peel Hall", "Piccadilly", "Piccadilly Gardens", "Pomona", "Prestwich", "Queens Road",
+            "Radcliffe", "Robinswood Road", "Rochdale Railway Station", "Rochdale Town Centre", "Roundthorn", "Sale", "Sale Water Park", "Salford Quays", "Shadowmoss", "Shaw and Crompton", "Shudehill", "South Chadderton",
+            "St Peter's Square", "St Werburgh's Road", "Stretford", "Timperley", "Trafford Bar", "Velopark", "Victoria", "Weaste", "West Didsbury", "Westwood", "Whitefield", "Withington", "Wythenshawe Park", "Wythenshawe Town Centre"
+        )]
+        #[ValidateSet("test_me")]
         [string] $Station,
 
         [Parameter(Mandatory = $False, Position = 2, HelpMessage = "The API uri")]
@@ -112,7 +122,8 @@ function Get-Metrolink
                     $WaitToken = "Wait$i"
 
                     # Some logic here to compare WorkingResult.StationLocation to the $Station value would be useful for the optional parameter.
-                    if ((-not ($Station)) -or (($Null -ne $Station) -and ($Station -eq $WorkingResult.StationLocation)))
+                    if ((-not ($Station)) -or
+                        (($Null -ne $Station) -and ($WorkingResult.StationLocation -match $Station)))
                     {
                         Write-Debug -Message "Passed conditional station validation: '$($WorkingResult.StationLocation)'."
                         $Tram = [PSCustomObject]@{

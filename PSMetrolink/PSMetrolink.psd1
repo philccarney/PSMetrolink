@@ -3,7 +3,7 @@
 
 @{
     RootModule        = "PSMetrolink.psm1"
-    ModuleVersion     = "1.0.0.0"
+    ModuleVersion     = "2.0.0.0"
     GUID              = "12ebb870-7f33-4a23-b371-87dd4cad8125"
     Author            = "Phil Carney"
     CompanyName       = "N/A"
